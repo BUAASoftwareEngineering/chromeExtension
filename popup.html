@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="http://unpkg.com/view-design/dist/styles/iview.css">
+</head>
+
+<body>
+  <div id="app">
+    <template>
+      <div style="padding: 10px;background: #f8f8f9">
+        <Card title="随笔选项" icon="ios-options" :padding="0" shadow style="width: 300px;">
+          <CellGroup>
+            <Cell title="请选择编程语言:" label="暂只支持Python 3和C++">
+              <i-select v-model="model1" @on-change="handleSelect">
+                <i-option v-for="item in langList" :value="item.value" :key="item.value">{{ item.label }}</i-option>
+              </i-select>
+            </Cell>
+            <Cell>
+              <i-button type="success" @click="clickButton">新建随笔代码</i-button>
+            </Cell>
+          </CellGroup>
+        </Card>
+      </div>
+    </template>
+  </div>
+
+  <script src="js/vue.min.js"></script>
+  <script src="js/iview.min.js"></script>
+  <script src="popup.js"></script>
+</body>
+
+</html>
