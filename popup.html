@@ -10,10 +10,11 @@
   <div id="app">
     <template>
       <div style="padding: 10px;background: #f8f8f9">
-        <Card title="随笔选项" icon="ios-options" :padding="0" shadow style="width: 300px;">
+        <Card title="随笔选项" icon="ios-options" :padding="0" shadow style="width: 270px;">
           <CellGroup>
-            <Cell title="请选择编程语言:" label="暂只支持Python 3和C++">
-              <i-select v-model="model1" @on-change="handleSelect">
+            <Cell label="暂只支持Python 3和C++">
+              请选择编程语言:
+              <i-select v-model="model1" @on-change="handleSelect" transfer style="width:100px;margin-left: 5px;" size="small">
                 <i-option v-for="item in langList" :value="item.value" :key="item.value">{{ item.label }}</i-option>
               </i-select>
             </Cell>
@@ -30,5 +31,12 @@
   <script src="js/iview.min.js"></script>
   <script src="popup.js"></script>
 </body>
+
+<style>
+  .ivu-cell:hover {
+    background-color: #ffffff;
+    cursor: auto;
+  }
+</style>
 
 </html>
